@@ -21,7 +21,7 @@ public class RunnerTest {
 		String retorno = "";
 
 		if (System.getProperty("os.name").toLowerCase().contains("linux")) {
-			retorno = runner.exec("ls");
+			retorno = runner.exec("ls -l");
 		} else {
 			runner.exec("dir");
 		}

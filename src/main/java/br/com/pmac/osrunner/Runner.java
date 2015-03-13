@@ -27,8 +27,13 @@ class RunnerThread extends Thread {
 			while ((line = br.readLine()) != null) {
 				sb.append(line).append("\n");
 			}
-
+			
+			
+			
 			answer = sb.toString();
+
+			
+
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
@@ -85,7 +90,13 @@ public class Runner {
 
 			exitVal = proc.waitFor();
 			LOG.info("ExitValue: " + exitVal);
-
+			
+			/*
+			 * wait error and output finish up
+			 */
+			error.join();
+			runnerOutput.join();
+			
 			if (error.getAnswer() != null && !error.getAnswer().equals("")) {
 				output = error.getAnswer();
 				return error.getAnswer();
