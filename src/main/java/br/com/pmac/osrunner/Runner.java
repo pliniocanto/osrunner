@@ -28,11 +28,7 @@ class RunnerThread extends Thread {
 				sb.append(line).append("\n");
 			}
 			
-			
-			
 			answer = sb.toString();
-
-			
 
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
